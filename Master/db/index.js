@@ -47,6 +47,10 @@ module.exports = {
         return connection.query(`SELECT * FROM employee WHERE manager_id = ?`, managerId)
 
     },
+
+    findAllPossibleManagers: function(employeeId){
+        return connection.query('SELECT * FROM managers', employeeId)
+    },
     removeEmployee: function(employee){
         return connection.query('DELETE FROM employee WHERE id = ?', employee)
     }
