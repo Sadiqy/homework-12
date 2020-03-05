@@ -53,5 +53,9 @@ module.exports = {
     },
     removeEmployee: function(employee){
         return connection.query('DELETE FROM employee WHERE id = ?', employee)
+    },
+    
+    updateEmployeeRole(employeeId, roleId){
+        return connection.query('UPDATE employee SET role_id = ? WHERE id = ?', [employeeId, roleId])
     }
 }
